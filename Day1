@@ -1,0 +1,33 @@
+##Concepts Covered
+1)What is SQL (Structured Query Language)
+2)Difference between SQL and NoSQL
+3)Tables, rows, columns, primary key, foreign key
+4)Understanding schemas and normalization (1NF, 2NF, 3NF)
+
+###Table	Description
+Users ->	Customer details
+Products ->	Store’s product catalog
+Orders ->	Order-level info
+OrderItems ->	Product-level info for each order
+Payments ->	Payment tracking
+
+CREATE TABLE Users (
+  user_id INT PRIMARY KEY,
+  name VARCHAR(100),
+  email VARCHAR(100) UNIQUE,
+  city VARCHAR(50),
+  join_date DATE
+);
+Practice filtering (WHERE city='Delhi')
+Date comparisons (join_date > '2024-01-01')
+
+CREATE TABLE Products (
+  product_id INT PRIMARY KEY,
+  product_name VARCHAR(100),
+  category VARCHAR(50),
+  price DECIMAL(10, 2),
+  stock_quantity INT
+);
+Practice aggregation (AVG(price)),
+Filtering (WHERE stock_quantity < 10)
+Sorting (ORDER BY price DESC)
