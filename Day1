@@ -31,3 +31,7 @@ CREATE TABLE Products (
 Practice aggregation (AVG(price)),
 Filtering (WHERE stock_quantity < 10)
 Sorting (ORDER BY price DESC)
+
+
+###Mistakes I did:
+1) I got month invalid error.
