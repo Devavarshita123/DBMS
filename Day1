@@ -4,12 +4,14 @@
 3)Tables, rows, columns, primary key, foreign key
 4)Understanding schemas and normalization (1NF, 2NF, 3NF)
 
+
 ###Table	Description
 Users ->	Customer details
 Products ->	Store’s product catalog
 Orders ->	Order-level info
 OrderItems ->	Product-level info for each order
 Payments ->	Payment tracking
+
 
 CREATE TABLE Users (
   user_id INT PRIMARY KEY,
@@ -20,6 +22,7 @@ CREATE TABLE Users (
 );
 Practice filtering (WHERE city='Delhi')
 Date comparisons (join_date > '2024-01-01')
+
 
 CREATE TABLE Products (
   product_id INT PRIMARY KEY,
@@ -33,5 +36,42 @@ Filtering (WHERE stock_quantity < 10)
 Sorting (ORDER BY price DESC)
 
 
-###Mistakes I did:
-1) I got month invalid error.
+CREATE TABLE Orders (
+  order_id INT PRIMARY KEY,
+  user_id INT,
+  order_date DATE,
+  total_amount DECIMAL(10, 2),
+  FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
+JOIN with Users for customer details
+Date functions (MONTH(order_date))
+Aggregations per user
+
+CREATE TABLE OrderItems (
+  order_item_id INT PRIMARY KEY,
+  order_id INT,
+  product_id INT,
+  quantity INT,
+  item_price DECIMAL(10, 2),
+  FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+  FOREIGN KEY (product_id) REFERENCES Products(product_id)
+);
+Join across 3–4 tables
+Nested subqueries (e.g., best-selling product)
+GROUP BY category or order
+
+CREATE TABLE Payments (
+  payment_id INT PRIMARY KEY,
+  order_id INT,
+  payment_date DATE,
+  payment_method VARCHAR(50),
+  payment_status VARCHAR(20),
+  FOREIGN KEY (order_id) REFERENCES Orders(order_id)
+);
+Practice filtering by payment method/status
+Multi-table joins (user + order + payment)
+Subqueries (e.g., unpaid orders)
+
+### Mistakes I did:
+1) I got month invalid error(28-dec-2025).
+2) 
