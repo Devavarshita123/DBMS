@@ -1,1 +1,10 @@
+Concepts:
+SELECT, DISTINCT, WHERE, AND/OR/NOT
+Pattern matching using LIKE
+BETWEEN, IN, IS NULL
 
+Eg : SELECT Name, Department
+FROM Employee
+WHERE Department = 'HR' AND Salary > 40000;
+
+Leetcode questions : 175, 181, 182.
