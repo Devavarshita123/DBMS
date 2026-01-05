@@ -74,4 +74,4 @@ Subqueries (e.g., unpaid orders)
 
 ### Mistakes I did:
 1) I got month invalid error(28-dec-2025).
-2) 
+2) Writing sub queries wrongly.
