@@ -1,0 +1,11 @@
+Concepts:
+COUNT, SUM, AVG, MIN, MAX
+Grouping data using GROUP BY
+Filtering groups using HAVING
+
+Eg : SELECT Department, AVG(Salary) AS AvgSal
+FROM Employee
+GROUP BY Department
+HAVING AVG(Salary) > 60000;
+
+Leetcode : 183, 184.
