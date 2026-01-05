@@ -1,0 +1,11 @@
+Concepts:ORDER BY & LIMIT
+Sorting using ORDER BY
+Fetching top N rows using LIMIT
+Sorting by multiple columns (ORDER BY Salary DESC, Name ASC)
+
+Eg : SELECT Name, Salary
+FROM Employee
+ORDER BY Salary DESC
+LIMIT 3;
+
+Practice : Leetcode 176
