@@ -6,3 +6,12 @@ Difference between JOIN and UNION
 Eg:SELECT e.Name, d.DepartmentName
 FROM Employee e
 INNER JOIN Department d ON e.DepartmentID = d.ID;
+
+Practice Leetcode questions:
+
+1) 1581:Customer who visited but not make any transactions.
+Sol) Analyse using venn digram, according to set theory(A-B).
+select Visits.customer_id,count(*) as count_no_trans from Visits 
+left join Transactions on Visits.visit_id=Transactions.visit_id 
+where Transactions.visit_id is null group by Visits.customer_id;
+Key learning : Don't forget to use group  by with aggregation function.
