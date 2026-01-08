@@ -1,0 +1,27 @@
+Concepts:
+1) Subqueries : A subquery is a query inside another query. They’re also called nested queries.
+They can be placed in:
+the WHERE clause
+the FROM clause
+the SELECT clause
+
+2) Types of Subqueries:
+| Type           | Returns                | Example                                                               | Used In       |
+| -------------- | ---------------------- | --------------------------------------------------------------------- | ------------- |
+| **Scalar**     | Single value           | `(SELECT AVG(salary) FROM Employee)`                                  | WHERE, SELECT |
+| **Multi-row**  | Multiple values        | `(SELECT department_id FROM Department)`                              | IN, ANY, ALL  |
+| **Correlated** | Depends on outer query | `(SELECT MAX(salary) FROM Employee e2 WHERE e2.dept_id = e1.dept_id)` | WHERE         |
+
+1) in -> atleast one value.
+2) exists -> returns atleast one row -> a boolean check.
+3) any -> greater than any value in the list.
+4) all -> compares to all the values.
+
+Practice Questions :
+| Problem                                                                        | Title                         | Concepts Covered     |
+| ------------------------------------------------------------------------------ | ----------------------------- | -------------------- |
+| [#197](https://leetcode.com/problems/rising-temperature/)                      | Rising Temperature            | Correlated subquery  |
+| [#626](https://leetcode.com/problems/exchange-seats/)                          | Exchange Seats                | Subquery + filtering |
+| [#184](https://leetcode.com/problems/department-highest-salary/)               | Highest salary per department | Correlated subquery  |
+| [#183](https://leetcode.com/problems/customers-who-never-order/)               | Simple subquery (NOT IN)      | Basic nested query   |
+| [#570](https://leetcode.com/problems/managers-with-at-least-5-direct-reports/) | Aggregate + subquery          | Multi-row            |
